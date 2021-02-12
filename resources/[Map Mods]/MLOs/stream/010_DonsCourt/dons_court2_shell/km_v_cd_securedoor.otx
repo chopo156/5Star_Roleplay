@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image km_v_cd_securedoor.dds
+	Type Regular
+	PixelFormat DXT1
+	Levels 8
+	Usage UNKNOWN
+	UsageFlags -
+	ExtraFlags 0
+}

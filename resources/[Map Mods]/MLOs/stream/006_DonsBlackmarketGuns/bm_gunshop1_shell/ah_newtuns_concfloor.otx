@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image ah_newtuns_concfloor.dds
+	Type Regular
+	PixelFormat DXT5
+	Levels 9
+	Usage UNKNOWN
+	UsageFlags -
+	ExtraFlags 0
+}

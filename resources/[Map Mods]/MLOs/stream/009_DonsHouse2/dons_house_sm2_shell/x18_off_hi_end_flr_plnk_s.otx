@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image x18_off_hi_end_flr_plnk_s.dds
+	Type Regular
+	PixelFormat DXT5
+	Levels 8
+	Usage UNKNOWN
+	UsageFlags -
+	ExtraFlags 0
+}

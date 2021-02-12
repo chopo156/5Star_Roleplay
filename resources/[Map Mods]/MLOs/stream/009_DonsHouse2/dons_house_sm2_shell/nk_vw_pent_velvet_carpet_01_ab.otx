@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image nk_vw_pent_velvet_carpet_01_ab.dds
+	Type Regular
+	PixelFormat DXT5
+	Levels 8
+	Usage UNKNOWN
+	UsageFlags -
+	ExtraFlags 0
+}

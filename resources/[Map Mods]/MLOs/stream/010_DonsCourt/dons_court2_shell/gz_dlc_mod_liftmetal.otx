@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image gz_dlc_mod_liftmetal.dds
+	Type Regular
+	PixelFormat DXT1
+	Levels 6
+	Usage UNKNOWN
+	UsageFlags -
+	ExtraFlags 0
+}

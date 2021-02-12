@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image fib_carpet_001_dm.dds
+	Type Regular
+	PixelFormat DXT1
+	Levels 8
+	Usage UNKNOWN
+	UsageFlags -
+	ExtraFlags 0
+}

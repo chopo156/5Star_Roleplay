@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CVehicleModelInfoVariation>
+  <variationData>
+		<Item>
+      <modelName>hwaybuffals</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            0
+            0
+            0
+            0
+            0
+          </indices>
+	        <liveries>
+            <Item value="true"/>
+						<Item value="true"/>
+						<Item value="true"/>
+						<Item value="true"/>
+						<Item value="true"/>
+						<Item value="true"/>
+						<Item value="true"/>
+						<Item value="true"/>
+          </liveries>
+        </Item>
+      </colors>
+      <kits>
+        <Item>0_default_modkit</Item>
+      </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="244"/>
+      <sirenSettings value="7001"/>
+    </Item>
+		<Item>
+      <modelName>hwaybuffals2</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            0
+            0
+            0
+            0
+            0
+          </indices>
+	        <liveries>
+            <Item value="true"/>
+						<Item value="true"/>
+						<Item value="true"/>
+						<Item value="true"/>
+						<Item value="true"/>
+						<Item value="true"/>
+						<Item value="true"/>
+						<Item value="true"/>
+          </liveries>
+        </Item>
+      </colors>
+      <kits>
+        <Item>0_default_modkit</Item>
+      </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="244"/>
+      <sirenSettings value="7002"/>
+    </Item>
+		<Item>
+      <modelName>polbuffals</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            0
+            0
+            0
+            0
+            0
+          </indices>
+	        <liveries>
+            <Item value="true"/>
+						<Item value="true"/>
+						<Item value="true"/>
+						<Item value="true"/>
+						<Item value="true"/>
+						<Item value="true"/>
+						<Item value="true"/>
+						<Item value="true"/>
+          </liveries>
+        </Item>
+      </colors>
+      <kits>
+        <Item>0_default_modkit</Item>
+      </kits>
+      <windowsWithExposedEdges/>
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Police guv plate</Name>
+            <Value value="100"/>
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="244"/>
+      <sirenSettings value="7003"/>
+    </Item>
+		<Item>
+      <modelName>umkbuffals</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+            <Item value="0" />
+            <Item value="0" />
+            <Item value="11" />
+            <Item value="156" />
+          </indices>
+          <liveries />
+        </Item>
+        <Item>
+          <indices content="char_array">
+            <Item value="2" />
+            <Item value="0" />
+            <Item value="134" />
+            <Item value="156" />
+          </indices>
+          <liveries />
+        </Item>
+        <Item>
+          <indices content="char_array">
+            <Item value="75" />
+            <Item value="0" />
+            <Item value="157" />
+            <Item value="156" />
+          </indices>
+          <liveries />
+        </Item>
+        <Item>
+          <indices content="char_array">
+            <Item value="7" />
+            <Item value="0" />
+            <Item value="134" />
+            <Item value="156" />
+          </indices>
+          <liveries />
+        </Item>
+        <Item>
+          <indices content="char_array">
+            <Item value="34" />
+            <Item value="0" />
+            <Item value="45" />
+            <Item value="156" />
+          </indices>
+          <liveries />
+        </Item>
+        <Item>
+          <indices content="char_array">
+            <Item value="0" />
+            <Item value="0" />
+            <Item value="2" />
+            <Item value="156" />
+          </indices>
+          <liveries />
+        </Item>
+      </colors>
+      <kits>
+        <Item>0_default_modkit</Item>
+      </kits>
+      <windowsWithExposedEdges />
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>police guv plate</Name>
+            <Value value="100" />
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="244" />
+      <sirenSettings value="7004" />
+    </Item>
+		<Item>
+      <modelName>umkbuffals2</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+            <Item value="0" />
+            <Item value="0" />
+            <Item value="11" />
+            <Item value="156" />
+          </indices>
+          <liveries />
+        </Item>
+        <Item>
+          <indices content="char_array">
+            <Item value="2" />
+            <Item value="0" />
+            <Item value="134" />
+            <Item value="156" />
+          </indices>
+          <liveries />
+        </Item>
+        <Item>
+          <indices content="char_array">
+            <Item value="75" />
+            <Item value="0" />
+            <Item value="157" />
+            <Item value="156" />
+          </indices>
+          <liveries />
+        </Item>
+        <Item>
+          <indices content="char_array">
+            <Item value="7" />
+            <Item value="0" />
+            <Item value="134" />
+            <Item value="156" />
+          </indices>
+          <liveries />
+        </Item>
+        <Item>
+          <indices content="char_array">
+            <Item value="34" />
+            <Item value="0" />
+            <Item value="45" />
+            <Item value="156" />
+          </indices>
+          <liveries />
+        </Item>
+        <Item>
+          <indices content="char_array">
+            <Item value="0" />
+            <Item value="0" />
+            <Item value="2" />
+            <Item value="156" />
+          </indices>
+          <liveries />
+        </Item>
+      </colors>
+      <kits>
+        <Item>0_default_modkit</Item>
+      </kits>
+      <windowsWithExposedEdges />
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>police guv plate</Name>
+            <Value value="100" />
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="244" />
+      <sirenSettings value="7005" />
+    </Item>
+		<Item>
+      <modelName>trubuffals</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+            <Item value="0" />
+            <Item value="0" />
+            <Item value="0" />
+            <Item value="0" />
+          </indices>
+          <liveries />
+        </Item>
+      </colors>
+      <kits>
+        <Item>0_default_modkit</Item>
+      </kits>
+      <windowsWithExposedEdges />
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>police guv plate</Name>
+            <Value value="100" />
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="244" />
+      <sirenSettings value="7006" />
+    </Item>
+		<Item>
+      <modelName>trubuffals2</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+            <Item value="0" />
+            <Item value="0" />
+            <Item value="0" />
+            <Item value="0" />
+          </indices>
+          <liveries />
+        </Item>
+      </colors>
+      <kits>
+        <Item>0_default_modkit</Item>
+      </kits>
+      <windowsWithExposedEdges />
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>police guv plate</Name>
+            <Value value="100" />
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="244" />
+      <sirenSettings value="7007" />
+    </Item>
+  </variationData>
+</CVehicleModelInfoVariation>

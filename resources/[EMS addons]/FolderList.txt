@@ -1,0 +1,5 @@
+FireScript
+hospital-beds
+medical-obs
+stretcher
+wheelchair

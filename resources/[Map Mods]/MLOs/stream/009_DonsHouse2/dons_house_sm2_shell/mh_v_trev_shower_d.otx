@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image mh_v_trev_shower_d.dds
+	Type Regular
+	PixelFormat DXT1
+	Levels 7
+	Usage DIFFUSE
+	UsageFlags  HD_SPLIT
+	ExtraFlags 0
+}

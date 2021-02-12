@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image v_glass_d.dds
+	Type Regular
+	PixelFormat DXT1
+	Levels 1
+	Usage DIFFUSE
+	UsageFlags  HD_SPLIT
+	ExtraFlags 0
+}

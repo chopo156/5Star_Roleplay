@@ -1,0 +1,8 @@
+you definitely need a bob74_ipl script
+
+coords interior 786.78283691406,5591.994140625,11.692055702209
+
+in __resource.lua add and push folder gtav "franklin_aunt2.lua" 
+-------------------------------------------------------
+client_script "gtav/franklin_aunt2.lua"
+-------------------------------------------------------

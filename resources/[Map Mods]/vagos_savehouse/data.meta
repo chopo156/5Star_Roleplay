@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<CDataFileMgr__ContentsOfDataFileXml>
+  <disabledFiles/>
+  <includedXmlFiles/>
+  <includedDataFiles/>
+  <dataFiles>
+	<Item>
+      <filename>resources:/vagos_savehouse/interiorProxies.meta</filename>
+      <fileType>INTERIOR_PROXY_ORDER_FILE</fileType>
+      <overlay value="false"/>
+      <disabled value="false"/>
+      <persistent value="true"/>
+    </Item>
+  </dataFiles>
+</CDataFileMgr__ContentsOfDataFileXml>

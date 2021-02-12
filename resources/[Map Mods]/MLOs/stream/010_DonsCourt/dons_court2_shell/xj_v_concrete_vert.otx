@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image xj_v_concrete_vert.dds
+	Type Regular
+	PixelFormat DXT1
+	Levels 9
+	Usage UNKNOWN
+	UsageFlags -
+	ExtraFlags 0
+}
