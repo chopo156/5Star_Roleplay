@@ -1,0 +1,50 @@
+/* Need Help? Join my discord @ discord.gg/yWddFpQ */
+/* If you want to change the keypress on the scoreboard opening, go to 'client.lua' */
+:root /* Edit this for config */ {
+	--main-bg-color: rgba(12, 44, 95, 0.548);
+	--main-heading-bg-color: rgba(0, 0, 0, 0.568);
+	--main-border: 3px solid rgba(0, 0, 0, 0.363); /* keep the solid but you can change the 'black' and '2px' */
+	--main-border-radius: 6px; /* The 'roundness' of the border of the playerlist */
+	--main-font: 'Roboto Condensed', sans-serif; /* If you are using a font api, pls import it. in the index or here */
+	--main-text-color: rgba(255, 255, 255, 0.9);
+	--main-font-size: 39px;
+	--main-window-width: 370px;
+	--main-window-height: 185px;
+	--main-text-align: left;
+	--main-heading-height: 23px;
+	--main-padding: 7px;
+	--main-font-weight: 500; 
+	/* The values below are dependant on 'config.js' */
+	--ext-title-font-size: 25px;
+	--ext-title-font-align: center;
+	--ext-title-font-color: rgb(223, 223, 223);
+	--ext-footer-font-align: right;
+	--ext-footer-font-color: rgba(190, 215, 255, 0.329);
+  }
+/* Config END */
+
+
+
+/* Default Values Just in case you mess something up */
+/*  
+	--main-bg-color: rgba(12, 44, 95, 0.548);
+	--main-heading-bg-color: rgba(0, 0, 0, 0.568);
+	--main-border: 3px solid rgba(0, 0, 0, 0.363); 
+	--main-border-radius: 6px; 
+	--main-font: 'Roboto Condensed', sans-serif; 
+	--main-text-color: rgba(255, 255, 255, 0.9);
+	--main-font-size: 39px;
+	--main-window-width: 370px;
+	--main-window-height: 185px;
+	--main-text-align: left;
+	--main-heading-height: 23px;
+	--main-padding: 7px;
+	--main-font-weight: 500; 
+
+	--ext-title-font-size: 25px;
+	--ext-title-font-align: center;
+	--ext-title-font-color: rgb(223, 223, 223);
+	--ext-footer-font-align: right;
+	--ext-footer-font-color: rgba(190, 215, 255, 0.329);
+
+*/
