@@ -1,8 +1,0 @@
-you definitely need a bob74_ipl script
-
-coords interior 772.17030000,5568.05900000,11.03168000
-
-in __resource.lua add and push folder gtav "trevors_trailer2.lua" 
--------------------------------------------------------
-client_script "gtav/trevors_trailer2.lua"
--------------------------------------------------------

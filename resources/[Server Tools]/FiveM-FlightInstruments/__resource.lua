@@ -1,1 +1,0 @@
-client_script 'flightinstruments_cl.lua'
