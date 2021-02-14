@@ -5,18 +5,21 @@ local cfg = {}
 local cfg_clothing = {
   -- customization parts list {title, part}
   parts = {
+    {"Masks", "drawable:1"},
     {"Hats", "prop:0"},
-    {"Face", "drawable:1"},
-    {"Ears", "prop:2"},
     {"Glasses", "prop:1"},
+    {"Jacket", "drawable:11"},
+    {"Shirt", "drawable:8"},
+    {"Hands/Arms", "drawable:3"},
+    {"Legs", "drawable:4"},
+    {"Shoes", "drawable:6"},
+    {"Armor", "drawable:9"},
     {"Neck", "drawable:7"},
-    {"Hand", "drawable:3"},
+    {"Badges", "drawable:10"},
+    {"Ears", "prop:2"},
     {"Watches", "prop:6"},
     {"Bracelets", "prop:7"},
-    {"Shirt", "drawable:8"},
-    {"Jacket", "drawable:11"},
-    {"Legs", "drawable:4"},
-    {"Shoes", "drawable:6"}
+    {"Backpacks", "drawable:5"}
   },
   map_entity = {"PoI", {blip_id = 73, blip_color = 3, marker_id = 1}}
 }
@@ -65,6 +68,9 @@ cfg.skinshops = {
   {cfg_clothing,1190.55017089844,2713.44189453125,38.2226257324219},
   {cfg_clothing,-3172.49682617188,1048.13330078125,20.8632030487061},
   {cfg_clothing,-1108.44177246094,2708.92358398438,19.1078643798828},
+
+  {cfg_clothing,450.13027954102,-992.9697265625,30.689334869385}, --Mission Row PD
+  {cfg_clothing,-436.20736694336,5990.1440429688,31.716171264648}, --Paleto So
 
   {cfg_barber,-813.71356201172,-184.06265258789,37.56893157959},
   {cfg_barber,136.97842407227,-1707.8671875,29.291620254517},

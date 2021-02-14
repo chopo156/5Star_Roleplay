@@ -1,0 +1,110 @@
+body { 
+	overflow: hidden; 
+	display: none;
+}
+
+#display {
+	position: absolute;
+	box-sizing: border-box;
+	background: #E5E5E5;
+	width: 1920px;
+	height: 1080px;
+	background-color: transparent;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+#numField {
+	fill: url(#numField_A0_Rectangle_2_pattern);
+}
+.numField {
+	position: absolute;
+	overflow: visible;
+	width: 378px;
+	height: 288px;
+	left: 67px;
+	top: 58px;
+}
+
+#keycontrols * {
+  position: fixed;
+  width: 65px;
+  height: 51px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+#key1 {
+	left: 106px;
+	top: 96px;
+}
+
+#key2 {
+	left: 181px;
+	top: 96px;
+}
+
+#key3 {
+	left: 256px;
+	top: 96px;
+}
+
+#key4 {
+	left: 106px;
+	top: 158px;
+}
+
+#key5 {
+	left: 181px;
+	top: 158px;
+}
+
+#key6 {
+	left: 256px;
+	top: 158px;
+}
+
+#key7 {
+	left: 106px;
+	top: 216px;
+}
+
+#key8{
+	left: 181px;
+	top: 216px;
+}
+
+#key9 {
+	left: 256px;
+	top: 216px;
+}
+
+#key0 {
+	left: 181px;
+	top: 276px;
+}
+
+#keyCancel {
+	right: 906px;
+	top: 96px;
+	
+	left: 350px;
+	width: 77px;
+}
+
+#keyClear {
+	right: 906px;
+	top: 158px;
+	
+	left: 350px;
+	width: 77px;
+}
+
+#keyEnter {
+	right: 906px;
+	top: 216px;
+	
+	left: 350px;
+	width: 77px;
+}

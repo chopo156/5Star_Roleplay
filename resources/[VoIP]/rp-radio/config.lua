@@ -51,5 +51,5 @@ radioConfig = {
         List = {}, -- Frequency list, Don't touch
         Access = {}, -- List of freqencies a player has access to
     },
-    AllowRadioWhenClosed = false -- Allows the radio to be used when not open (uses police radio animation) 
+    AllowRadioWhenClosed = true -- Allows the radio to be used when not open (uses police radio animation) 
 }

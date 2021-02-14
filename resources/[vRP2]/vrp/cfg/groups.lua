@@ -64,7 +64,8 @@ cfg.groups = {
     "player.giveitem",
     "profiler.server",
     "profiler.client", 
-    "admin.extras" 
+    "admin.extras",
+	"item.bypass"	
   },
   ["admin"] = {
     "admin.tickets",
@@ -99,6 +100,9 @@ cfg.groups = {
   --==========|===================|==========-- 
   ["police"] = { --add this group to users for whitelisted police roles. This group is used by department heads to hire and fire officers. DO NOT DELETE
     "police.whitelisted"
+  },
+  ["PCW"] = { --add this group to users for whitelisted police roles. This group is used by department heads to hire and fire officers. DO NOT DELETE
+    "police.cheif"
   },
   ["DeptHead"] = { --add this group to users for whitelisted department head roles. DO NOT DELETE
     "department.head.whitelisted"
@@ -136,7 +140,7 @@ cfg.groups = {
     "police.chest_seized",
     "-police.seizable" -- negative permission, police can't seize itself, even if another group add the permission
   },
-  ["lspd police1"] = {
+  ["LSPD"] = {
     _config = {
       title = "Politimand",
       gtype = "job",
@@ -146,7 +150,7 @@ cfg.groups = {
     },
     "police.menu",
     "police.askid",
-    "officer.cloakroom",
+    "police.cloakroom",
     "police.pc",
     "police.handcuff",
     "police.drag",
@@ -163,61 +167,7 @@ cfg.groups = {
     "police.chest_seized",
     "-police.seizable" -- negative permission, police can't seize itself, even if another group add the permission
   },
-  ["lspd police2"] = {
-    _config = {
-      title = "Senior politibetjent",
-      gtype = "job",
-      onjoin = police_onjoin,
-      onspawn = police_onspawn,
-      onleave = police_onleave
-    },
-    "police.menu",
-    "police.askid",
-    "officer.cloakroom",
-    "police.pc",
-    "police.handcuff",
-    "police.drag",
-    "police.putinveh",
-    "police.getoutveh",
-    "police.check",
-    "police.service",
-    "police.wanted",
-    "police.seize",
-    "police.jail",
-    "police.fine",
-    "police.announce",
-    "police.vehicle2",
-    "police.chest_seized",
-    "-police.seizable" -- negative permission, police can't seize itself, even if another group add the permission
-  },
-  ["lspd corporal"] = {
-    _config = {
-      title = "LSPD korporal",
-      gtype = "job",
-      onjoin = police_onjoin,
-      onspawn = police_onspawn,
-      onleave = police_onleave
-    },
-    "police.menu",
-    "police.askid",
-    "lspdcorp.cloakroom",
-    "police.pc",
-    "police.handcuff",
-    "police.drag",
-    "police.putinveh",
-    "police.getoutveh",
-    "police.check",
-    "police.service",
-    "police.wanted",
-    "police.seize",
-    "police.jail",
-    "police.fine",
-    "police.announce",
-    "police.vehicle2",
-    "police.chest_seized",
-    "-police.seizable" -- negative permission, police can't seize itself, even if another group add the permission
-  },
-  ["lspd sgt"] = {
+  ["LSPD2"] = {
     _config = {
       title = "LSPD Sergent",
       gtype = "job",
@@ -227,7 +177,7 @@ cfg.groups = {
     },
     "police.menu",
     "police.askid",
-    "lspdsgt.cloakroom",
+    "police.cloakroom",
     "police.pc",
     "police.handcuff",
     "police.drag",
@@ -244,88 +194,7 @@ cfg.groups = {
     "police.chest_seized",
     "-police.seizable" -- negative permission, police can't seize itself, even if another group add the permission
   },
-  ["lspd lt"] = {
-    _config = {
-      title = "LSPD Løjtnant",
-      gtype = "job",
-      onjoin = police_onjoin,
-      onspawn = police_onspawn,
-      onleave = police_onleave
-    },
-    "police.menu",
-    "police.askid",
-    "lspdlt.cloakroom",
-    "police.pc",
-    "police.handcuff",
-    "police.drag",
-    "police.putinveh",
-    "police.getoutveh",
-    "police.check",
-    "police.service",
-    "police.wanted",
-    "police.seize",
-    "police.jail",
-    "police.fine",
-    "police.announce",
-    "police.vehicle3",
-    "police.chest_seized",
-    "-police.seizable" -- negative permission, police can't seize itself, even if another group add the permission
-  },
-  ["lspd cpt"] = {
-    _config = {
-      title = "LSPD Kaptajn",
-      gtype = "job",
-      onjoin = police_onjoin,
-      onspawn = police_onspawn,
-      onleave = police_onleave
-    },
-    "police.menu",
-    "police.askid",
-    "lspdcpt.cloakroom",
-    "police.pc",
-    "police.handcuff",
-    "police.drag",
-    "police.putinveh",
-    "police.getoutveh",
-    "police.check",
-    "police.service",
-    "police.wanted",
-    "police.seize",
-    "police.jail",
-    "police.fine",
-    "police.announce",
-    "police.vehicle3",
-    "police.chest_seized",
-    "-police.seizable" -- negative permission, police can't seize itself, even if another group add the permission
-  },
-  ["lspd ltmjr"] = {
-    _config = {
-      title = "LSPD Løjtnant major",
-      gtype = "job",
-      onjoin = police_onjoin,
-      onspawn = police_onspawn,
-      onleave = police_onleave
-    },
-    "police.menu",
-    "police.askid",
-    "lspdltmjr.cloakroom",
-    "police.pc",
-    "police.handcuff",
-    "police.drag",
-    "police.putinveh",
-    "police.getoutveh",
-    "police.check",
-    "police.service",
-    "police.wanted",
-    "police.seize",
-    "police.jail",
-    "police.fine",
-    "police.announce",
-    "police.vehicle3",
-    "police.chest_seized",
-    "-police.seizable" -- negative permission, police can't seize itself, even if another group add the permission
-  },
-  ["lspd mjr"] = {
+  ["LSPD3"] = {
     _config = {
       title = "LSPD Major",
       gtype = "job",
@@ -335,61 +204,7 @@ cfg.groups = {
     },
     "police.menu",
     "police.askid",
-    "lspdmjr.cloakroom",
-    "police.pc",
-    "police.handcuff",
-    "police.drag",
-    "police.putinveh",
-    "police.getoutveh",
-    "police.check",
-    "police.service",
-    "police.wanted",
-    "police.seize",
-    "police.jail",
-    "police.fine",
-    "police.announce",
-    "police.vehicle4",
-    "police.chest_seized",
-    "-police.seizable" -- negative permission, police can't seize itself, even if another group add the permission
-  },
-  ["lspd cmdr"] = {
-    _config = {
-      title = "LSPD Kommandør",
-      gtype = "job",
-      onjoin = police_onjoin,
-      onspawn = police_onspawn,
-      onleave = police_onleave
-    },
-    "police.menu",
-    "police.askid",
-    "lspdcmdr.cloakroom",
-    "police.pc",
-    "police.handcuff",
-    "police.drag",
-    "police.putinveh",
-    "police.getoutveh",
-    "police.check",
-    "police.service",
-    "police.wanted",
-    "police.seize",
-    "police.jail",
-    "police.fine",
-    "police.announce",
-    "police.vehicle4",
-    "police.chest_seized",
-    "-police.seizable" -- negative permission, police can't seize itself, even if another group add the permission
-  },
-  ["lspd asscheif"] = {
-    _config = {
-      title = "LSPD Assistentchef",
-      gtype = "job",
-      onjoin = police_onjoin,
-      onspawn = police_onspawn,
-      onleave = police_onleave
-    },
-    "police.menu",
-    "police.askid",
-    "lspdasscheif.cloakroom",
+    "police.cloakroom",
     "police.pc",
     "police.handcuff",
     "police.drag",
@@ -417,7 +232,7 @@ cfg.groups = {
     "police.admin",
     "police.menu",
     "police.askid",
-    "lspdasscheif.cloakroom",
+    "police.cloakroom",
     "police.pc",
     "police.handcuff",
     "police.drag",
@@ -444,6 +259,7 @@ cfg.groups = {
     },
     "emergency.revive",
     "emergency.shop",
+	"ems.items",
     "emergency.service",
     "emergency.vehicle",
     "emergency.cloakroom"
@@ -510,8 +326,10 @@ cfg.selectors = {
   ["Police job"] = {
     _config = {x = 437.924987792969, y = -987.974182128906, z = 30.6896076202393, permissions={"police.whitelisted"}, map_entity = {"PoI", {blip_id = 351, blip_color = 38, marker_id = 1}}},
     "lspd cadet",
-    "lspd police1",
-    "lspd police2",
+    "LSPD",
+    "LSPD2",
+	"LSPD3",
+	"lspd cheif",
     "Borger"
   },
   ["Emergency job"] = {
@@ -560,7 +378,7 @@ cfg.count_display_css = [[
 cfg.count_display_permissions = {
   {"!group.user", "https://i.imgur.com/tQ2VHAi.png"},
   {"!group.admin", "https://i.imgur.com/cpSYyN0.png"},
-  {"!group.lspd", "https://i.imgur.com/dygLDfC.png"},
+  {"!group.LSPD", "https://i.imgur.com/dygLDfC.png"},
   {"!group.emergency", "https://i.imgur.com/K5lXutO.png"},
   {"!group.repair", "https://i.imgur.com/QEjFgzM.png"},
   {"!group.taxi", "https://i.imgur.com/yY4yrZN.png"}

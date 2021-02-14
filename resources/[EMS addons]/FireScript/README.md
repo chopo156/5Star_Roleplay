@@ -1,33 +1,48 @@
-# FireScript
-FireScript is a resource for FiveM by Albo1125 that allows players to simulate fires and smoke in FiveM.
+![Logo](https://i.imgur.com/5EoYbiv.png)
 
-## Installation & Usage
-1. Download the latest release.
-2. Unzip the FireScript folder into your resources folder on your FiveM server.
-3. Add the following to your server.cfg file:
-```text
-start FireScript
+[![License GNU-GPL v3](https://img.shields.io/github/license/gimicze/firescript?style=for-the-badge)](https://github.com/gimicze/firescript/blob/master/LICENSE "License")
+[![Latest release](https://img.shields.io/github/v/release/gimicze/firescript?style=for-the-badge)](https://github.com/gimicze/firescript/releases/latest "Latest release")
+[![Total downloads](https://img.shields.io/github/downloads/gimicze/firescript/total?style=for-the-badge)](https://github.com/gimicze/firescript/releases/latest "Total downloads")
+
+A FiveM resource enabling whitelisted users to create a (*somewhat*) realistic fires. As far as I am aware, the only fire script compatible with OneSync Infinity / Beyond.
+
+<details>
+<summary>In-game screenshots</summary>
+
+![Example fire](https://i.imgur.com/XOLJN7v.png "Example fire")
+![Example fire](https://i.imgur.com/IYmE6qn.png)
+</details>
+
+# Instalation
+
+1. Extract the contents into folder called `firescript` into your resources folder.
+2. Start the script: **a)** in the `server.cfg` file; **b)** through the console
+
+## Starting a resource through console
+
+1. In a server console, or client console (F8), type in `refresh` and confirm using ENTER
+2. Type in `start firescript` and confirm using ENTER
+
+## Starting a resource in `server.cfg`
+1. Add this line to your server.cfg
 ```
+start firescript
+```
+2. Save the file and restart the server.
 
-## Commands
-* /startfire NUMFLAMES RADIUS. NUMFLAMES determines the maximum number of flames the fire will have (maximum 100), while RADIUS specifies the radius of the fire in metres (maximum 30). /startfire 40 10 is a good starting point.
-* /stopfire. This stops all fires within a 35 metre radius (you can also extinguish fires normally).
-* /stopallfires. This stops all fires on the map.
-* /startsmoke SCALE. You're also able to create 'smoke without fire' e.g. for a call where someone gets concerned for fire over barbecue smoke. SCALE is replaced by a number (recommended to keep it between 0.5-5) that indicates the magnitude of the smoke. E.g. /startsmoke 1
-* /stopsmoke. Stops all smoke without fire within a 35 metre radius.
-* /stopallsmoke. Stops all smoke without fire on the map.
+# Usage & Commands
 
-## Improvements & Licensing
-Please view the license. Improvements and new feature additions are very welcome, please feel free to create a pull request. Proper credit is always required if you release modified versions of my work and you should always link back to this original source.
+*Tutorial moved to [the wiki](https://github.com/gimicze/firescript/wiki).*
 
-## Libraries used (many thanks to their authors)
-* [CitizenFX.Core](https://github.com/citizenfx/fivem)
+# Known bugs
+*None! Feel free to open issue when you find any!*
 
-## Video
-[Click here](https://youtu.be/8veCv0OEkUQ)
+# Credits
+- Albo1125 and foregz - I borrowed some particles from their fire scripts. Thanks!
+- MadMick#0773, Mickey#2590 and MadLadClip for testing and help with the script.
 
-## Screenshots
-![FireScript](https://i.imgur.com/jAXE0gc.png)
-![FireScript](https://i.imgur.com/aMvHvtH.jpg)
-![FireScript](https://i.imgur.com/r1u70Ns.png)
-![FireScript](https://i.imgur.com/VmnJQMG.jpg)
+# Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+# License
+[GNU GPL 3.0](https://github.com/gimicze/firescript/blob/main/LICENSE)
