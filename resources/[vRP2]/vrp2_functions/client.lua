@@ -157,9 +157,9 @@ function Functions:deleteVehicleInFrontOrInside(offset)
     Citizen.InvokeNative(0xAD738C3085FE7E11, veh, false, true) -- set not as mission entity
     SetVehicleAsNoLongerNeeded(Citizen.PointerValueIntInitialized(veh))
     Citizen.InvokeNative(0xEA386986E786A54F, Citizen.PointerValueIntInitialized(veh))
-    vRP.EXT.Base:notify("Success")
+    vRP.EXT.Base:notify("Succes")
   else
-    vRP.EXT.Base:notify("Too far")
+    vRP.EXT.Base:notify("For langt")
   end
 end
 
@@ -172,9 +172,9 @@ function Functions:deleteNearestVehicle(radius)
     Citizen.InvokeNative(0xAD738C3085FE7E11, veh, false, true) -- set not as mission entity
     SetVehicleAsNoLongerNeeded(Citizen.PointerValueIntInitialized(veh))
     Citizen.InvokeNative(0xEA386986E786A54F, Citizen.PointerValueIntInitialized(veh))
-    vRP.EXT.Base:notify("Success")
+    vRP.EXT.Base:notify("Succes")
   else
-    vRP.EXT.Base:notify("Too far")
+    vRP.EXT.Base:notify("For langt")
   end
 end
 
@@ -183,7 +183,7 @@ function Functions:spawnVehicle(model)
     local mhash = GetHashKey(model)
     while not HasModelLoaded(mhash) and i < 1000 do
 	  if math.fmod(i,100) == 0 then
-	    vRP.EXT.Base:notify("loading") -- lang.spawnveh.invalid()
+	    vRP.EXT.Base:notify("Indlæser") -- lang.spawnveh.invalid()
 	  end
       RequestModel(mhash)
       Citizen.Wait(30)
@@ -206,10 +206,52 @@ function Functions:spawnVehicle(model)
 	end 
 	  
       SetModelAsNoLongerNeeded(mhash)
-	  vRP.EXT.Base:notify("Success") -- lang.spawnveh.invalid()
+	  vRP.EXT.Base:notify("Succes") -- lang.spawnveh.invalid()
 	else
-	  vRP.EXT.Base:notify("invalid") -- lang.spawnveh.invalid()
+	  vRP.EXT.Base:notify("ugyldig") -- lang.spawnveh.invalid()
 	end
+end
+
+function Functions:tpToWaypoint()
+
+	local targetPed = GetPlayerPed(-1)
+	local targetVeh = GetVehiclePedIsUsing(targetPed)
+	if(IsPedInAnyVehicle(targetPed))then
+		targetPed = targetVeh
+    end
+
+	if(not IsWaypointActive())then
+		vRP.EXT.Base:notify("Waypoint Set") --lang.tptowaypoint.notfound()
+		return
+	end
+
+	local waypointBlip = GetFirstBlipInfoId(8) -- 8 = waypoint Id
+	local x,y,z = table.unpack(Citizen.InvokeNative(0xFA7C7F0AADF25D09, waypointBlip, Citizen.ResultAsVector())) 
+
+	-- ensure entity teleports above the ground
+	local ground
+	local groundFound = false
+	local groundCheckHeights = {100.0, 150.0, 50.0, 0.0, 200.0, 250.0, 300.0, 350.0, 400.0,450.0, 500.0, 550.0, 600.0, 650.0, 700.0, 750.0, 800.0}
+
+	for i,height in ipairs(groundCheckHeights) do
+		SetEntityCoordsNoOffset(targetPed, x,y,height, 0, 0, 1)
+		Wait(10)
+
+		ground,z = GetGroundZFor_3dCoord(x,y,height)
+		if(ground) then
+			z = z + 3
+			groundFound = true
+			break;
+		end
+	end
+
+	if(not groundFound)then
+		z = 1000
+		GiveDelayedWeaponToPed(PlayerPedId(), 0xFBAB5776, 1, 0) -- parachute
+	end
+
+	SetEntityCoordsNoOffset(targetPed, x,y,z, 0, 0, 1)
+	vRP.EXT.Base:notify("Du teleporteres") -- lang.tptowaypoint.success()
 end
 
 function Functions:isPlayerNearModel(model,radius)
@@ -290,6 +332,7 @@ Functions.tunnel.getNearestVehicle = Functions.getNearestVehicle
 Functions.tunnel.deleteVehicleInFrontOrInside = Functions.deleteVehicleInFrontOrInside
 Functions.tunnel.deleteNearestVehicle = Functions.deleteNearestVehicle
 Functions.tunnel.spawnVehicle = Functions.spawnVehicle
+Functions.tunnel.tpToWaypoint = Functions.tpToWaypoint
 Functions.tunnel.isPlayerNearModel = Functions.isPlayerNearModel
 Functions.tunnel.IsPedInAnyHeli = Functions.IsPedInAnyHeli
 Functions.tunnel.IsPedInAnyPlane = Functions.IsPedInAnyPlane

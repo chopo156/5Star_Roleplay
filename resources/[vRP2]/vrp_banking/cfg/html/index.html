@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+	<script src="js/listener.js" type="text/javascript"></script>
+    <script src="js/config.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="snow" style="display: none;"></div>
+        <div class="atm" id="atm"  style="display: none;">
+            <div id="login">
+                <div id="welcome">
+                    <p>Velkommen</p>
+                    <div class="id_name" id="id_name">
+                        <span class="player" id="player"></span>
+                    </div>
+                </div>
+                <div id="pin">
+                    <button class="input_pin" id="input_pin"></button>
+                    <button class="input_pin" id="input_pin_1"></button>
+                    <button class="input_pin" id="input_pin_2"></button>
+                    <button class="input_pin" id="input_pin_3"></button>
+                </div>
+                <div id="enter">
+                    <button class="login_btn" id="login_btn">
+                        <p>Gå ind</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="main" id="main"  style="display: none;">
+            <div class="title" id="title">
+				<div id="main_logo">
+                    <p>
+                        <span>FL</span>EE<span>CA</span>
+                    </p>
+                </div>
+                <div id="msg">
+                    <p>
+                        <span>Vær venlig</span> bekræft det<br>
+                        med<span> din</span> Fingeraftryk
+                    </p>
+                </div>
+                <div id="fingerprint-content">
+                    <div class="fingerprint-default"></div>
+                    <div class="fingerprint-active"></div>
+                    <div class="fingerprint-bar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="nav_bar" id="nav_bar" style="display: none;">
+			<div id="nav">
+                <div id="nav_logo">
+                    <div class="nav_logo_img"></div>
+                </div>
+                <div id="nav_btn">
+                    <button class="home" id="home">Hjem</button>
+                    <button class="sign-out" id="sign-out">Forlade</button>
+                </div>
+            </div>
+        </div>
+        <div class="info" id="info"  style="display: none;">
+            <div id="status_box">
+                <div class="status">
+                    <p>Velkommen</p>
+                    <div class="name" id="name">
+                        <span class="player" id="player"></span>
+                    </div>
+                    <p>Kontosaldo:</p>
+                    <div class="money" id="money">
+                        <span class="dollars"> $</span><span class="bal" id="bal"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="info_btn">
+                <button class="deposit_btn" id="deposit_btn">
+                    <p>Flyt<br>
+                    <span>Til din konto</span></p>
+                </button>
+                <button class="withdraw_btn" id="withdraw_btn">
+                    <p>Hæv<br>
+                    <span>Fra din konto</span></p>
+                </button>
+                <button class="transfer_btn" id="transfer_btn">
+                    <p>Overførsel<br>
+                    <span>Til en person</span></p>
+                </button>
+            </div>
+            <div id="ad_box_1">
+                <div id="ad_1">
+                    <p>
+                        <span>Du stoler på os!</span><br>
+                        Antallet af konti er steget med 7% siden 2020
+                    </p>
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div id="ad_box_2">
+                <div id="ad_2">
+                    <p>
+                        <span>Bank, du stoler på!</span><br>
+                        Bragt til dig af Boss Man Development
+                    </p>
+                    <div class="dev_logo"></div>
+                </div>
+            </div>
+        </div>
+        <div class="deposit" id="deposit" style="display: none;">
+            <div class="fast_deposit">
+                <button class="d_1" id="d_1" value=""></button>
+                <button class="d_2" id="d_2" value=""></button>
+                <button class="d_3" id="d_3" value=""></button>
+            </div>
+            <div class="s_deposit">
+                <form id="i_deposit">
+    				<div class="d_input box-shadow">
+    					<label>Hvor meget vil du deponere ?</label>
+    					<input id="amountd" type="number" placeholder="$ 0">
+    				</div>
+				</form>
+            </div>
+            <div class="deposit_opt">
+                <button class="d_clear" id="d_clear" type="reset">
+                    <p>Slet</p>
+                </button>
+                <button class="d_confirm" id="d_confirm" type="submit">
+                    <p>Bekræfte</p>
+                </button>
+            </div>
+        </div>
+        <div class="withdraw" id="withdraw" style="display: none;">
+            <div class="fast_withdraw">
+                <button class="w_1" id="w_1" value=""></button>
+                <button class="w_2" id="w_2" value=""></button>
+                <button class="w_3" id="w_3" value=""></button>
+            </div>
+            <div class="s_withdraw">
+                <form id="i_withdraw">
+    				<div class="w_input box-shadow">
+    					<label>Hvor meget vil du trække dig tilbage ?</label>
+    					<input id="amountw" type="number" placeholder="$ 0">
+    				</div>
+				</form>
+            </div>
+            <div class="withdraw_opt">
+                <button class="w_clear" id="w_clear" type="reset">
+                    <p>Slet</p>
+                </button>
+                <button class="w_confirm" id="w_confirm" type="submit">
+                    <p>Bekræfte</p>
+                </button>
+            </div>
+        </div>
+        <div class="transfer" id="transfer" style="display: none;">
+        </div>
+    </div>
+</body>
+</html>

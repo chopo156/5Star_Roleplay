@@ -27,8 +27,6 @@ function Fire:createFlame(fireIndex, flameIndex, coords)
 			}
         end
 		self.active[fireIndex].flameCoords[flameIndex] = coords
-		Citizen.Wait(8000)
-		TriggerServerEvent('Fire-EMS-Pager:PageTones', {"fire"}, false)
 	end
 end
 
@@ -84,7 +82,7 @@ function Fire:remove(fireIndex, callback)
 		200,
 		function()
 			if self.active[fireIndex] and next(self.active[fireIndex].flames) ~= nil then
-				print("WARNING: A fire persisted!")
+				print("WARNING: En brand vedvarede!!")
 				self:remove(fireIndex)
 			elseif callback then
 				callback(fireIndex)

@@ -103,6 +103,8 @@ cfg.items = {
   ["boom_box"] = {"Boom Box", "An old style boom box.", nil, 2.0,"item","stone", "no"},
   ["sour"] = {"Sour Mix", "",nil, 0.5,"item","stone", "no"},
   ["radio"] = {"radio", "", nil, 0.2,"item","stone", "no"},
+  ["fuel"] = {"brændstof", "", nil, 1.00,"item","stone", "no"},
+  ["cents"] = {"cent", "", nil, 0.00,"item","stone", "no"},
   --=====================--
   --====Special Items====--
   --=====================--

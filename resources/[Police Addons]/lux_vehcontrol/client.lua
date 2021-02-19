@@ -20,6 +20,8 @@ CONTROLS
 ---------------------------------------------------
 ]]
 
+RequestScriptAudioBank("DLC_WMSIRENS\\SIRENPACK_ONE", false)
+
 local count_bcast_timer = 0
 local delay_bcast_timer = 200
 
@@ -51,24 +53,24 @@ local snd_airmanu = {}
 -- these models will use their real wail siren, as determined by their assigned audio hash in vehicles.meta
 local eModelsWithFireSrn =
 {
-	"fdlctruck",
-	"fdlcbox",
+	"FIRETRUK",
 }
 
 -- models listed below will use AMBULANCE_WARNING as auxiliary siren
 -- unlisted models will instead use the default wail as the auxiliary siren
 local eModelsWithPcall =
 {	
-	"fdlcamb",
-	"fdlcamb2",
-	"fdlcamb3",
-	"fdlcbox",
-	"fdlcsand",
-	"fdlcsand2",
-	"fdlctruck",
-	"lcamb",
+	"AMBULANCE",
+	"FIRETRUK",
+	"LGUARD",
 }
 
+local eModelsWithSet2 =
+{	
+	"police2",
+	"BPD2",
+	"BPD3",
+}
 
 ---------------------------------------------------------------------
 function ShowDebug(text)
@@ -99,6 +101,16 @@ function usePowercallAuxSrn(veh)
 	return false
 end
 
+---------------------------------------------------------------------
+function useSecondSrn(veh)
+	local model = GetEntityModel(veh)
+	for i = 1, #eModelsWithSet2, 1 do
+		if model == GetHashKey(eModelsWithSet2[i]) then
+			return true
+		end
+	end
+	return false
+end
 ---------------------------------------------------------------------
 function CleanupSounds()
 	if count_sndclean_timer > delay_sndclean_timer then
@@ -185,23 +197,36 @@ function SetLxSirenStateForVeh(veh, newstate)
 			if newstate == 1 then
 				if useFiretruckSiren(veh) then
 					TogMuteDfltSrnForVeh(veh, false)
+				elseif useSecondSrn(veh) then
+					snd_lxsiren[veh] = GetSoundId()	
+					PlaySoundFromEntity(snd_lxsiren[veh], "SIREN_CHARLIE", veh, "DLC_WMSIRENS_SOUNDSET", 0, 0)
+					TogMuteDfltSrnForVeh(veh, true)
 				else
 					snd_lxsiren[veh] = GetSoundId()	
-					PlaySoundFromEntity(snd_lxsiren[veh], "VEHICLES_HORNS_SIREN_1", veh, 0, 0, 0)
+					PlaySoundFromEntity(snd_lxsiren[veh], "SIREN_ALPHA", veh, "DLC_WMSIRENS_SOUNDSET", 0, 0)
 					TogMuteDfltSrnForVeh(veh, true)
 				end
 				
 			elseif newstate == 2 then
-				snd_lxsiren[veh] = GetSoundId()
-				PlaySoundFromEntity(snd_lxsiren[veh], "VEHICLES_HORNS_SIREN_2", veh, 0, 0, 0)
-				TogMuteDfltSrnForVeh(veh, true)
-			
+				if useSecondSrn(veh) then
+					snd_lxsiren[veh] = GetSoundId()	
+					PlaySoundFromEntity(snd_lxsiren[veh], "SIREN_FOXTROT", veh, "DLC_WMSIRENS_SOUNDSET", 0, 0)
+					TogMuteDfltSrnForVeh(veh, true)
+				else
+					snd_lxsiren[veh] = GetSoundId()
+					PlaySoundFromEntity(snd_lxsiren[veh], "siren_bravo", veh, "DLC_WMSIRENS_SOUNDSET", 0, 0)
+					TogMuteDfltSrnForVeh(veh, true)
+				end
 			elseif newstate == 3 then
 				snd_lxsiren[veh] = GetSoundId()
 				if useFiretruckSiren(veh) then
-					PlaySoundFromEntity(snd_lxsiren[veh], "VEHICLES_HORNS_AMBULANCE_WARNING", veh, 0, 0, 0)
+					PlaySoundFromEntity(snd_lxsiren[veh], "SIREN_ECHO", veh, "DLC_WMSIRENS_SOUNDSET", 0, 0)
+				elseif useSecondSrn(veh) then
+					snd_lxsiren[veh] = GetSoundId()	
+					PlaySoundFromEntity(snd_lxsiren[veh], "SIREN_GOLF", veh, "DLC_WMSIRENS_SOUNDSET", 0, 0)
+					TogMuteDfltSrnForVeh(veh, true)
 				else
-					PlaySoundFromEntity(snd_lxsiren[veh], "VEHICLES_HORNS_POLICE_WARNING", veh, 0, 0, 0)
+					PlaySoundFromEntity(snd_lxsiren[veh], "SIREN_FOXTROT", veh, "DLC_WMSIRENS_SOUNDSET", 0, 0)
 				end
 				TogMuteDfltSrnForVeh(veh, true)
 				
@@ -222,7 +247,8 @@ function TogPowercallStateForVeh(veh, toggle)
 			if snd_pwrcall[veh] == nil then
 				snd_pwrcall[veh] = GetSoundId()
 				if usePowercallAuxSrn(veh) then
-					PlaySoundFromEntity(snd_pwrcall[veh], "VEHICLES_HORNS_AMBULANCE_WARNING", veh, 0, 0, 0)
+					--PlaySoundFromEntity(snd_pwrcall[veh], "VEHICLES_HORNS_AMBULANCE_WARNING", veh, 0, 0, 0)
+					PlaySoundFromEntity(snd_pwrcall[veh], "SIREN_HOTEL", veh, "DLC_WMSIRENS_SOUNDSET", 0, 0)
 				else
 					PlaySoundFromEntity(snd_pwrcall[veh], "VEHICLES_HORNS_SIREN_1", veh, 0, 0, 0)
 				end
@@ -237,7 +263,6 @@ function TogPowercallStateForVeh(veh, toggle)
 		state_pwrcall[veh] = toggle
 	end
 end
-
 ---------------------------------------------------------------------
 function SetAirManuStateForVeh(veh, newstate)
 	if DoesEntityExist(veh) and not IsEntityDead(veh) then
@@ -252,14 +277,16 @@ function SetAirManuStateForVeh(veh, newstate)
 			if newstate == 1 then
 				snd_airmanu[veh] = GetSoundId()
 				if useFiretruckSiren(veh) then
-					PlaySoundFromEntity(snd_airmanu[veh], "VEHICLES_HORNS_FIRETRUCK_WARNING", veh, 0, 0, 0)
+					--PlaySoundFromEntity(snd_airmanu[veh], "VEHICLES_HORNS_AMBULANCE_WARNING", veh, 0, 0, 0)
+					PlaySoundFromEntity(snd_airmanu[veh], "SIREN_HOTEL", veh, "DLC_WMSIRENS_SOUNDSET", 0, 0)
 				else
 					PlaySoundFromEntity(snd_airmanu[veh], "SIRENS_AIRHORN", veh, 0, 0, 0)
 				end
 				
 			elseif newstate == 2 then
 				snd_airmanu[veh] = GetSoundId()
-				PlaySoundFromEntity(snd_airmanu[veh], "VEHICLES_HORNS_SIREN_1", veh, 0, 0, 0)
+				--PlaySoundFromEntity(snd_airmanu[veh], "VEHICLES_HORNS_SIREN_1", veh, 0, 0, 0)
+				PlaySoundFromEntity(snd_airmanu[veh], "siren_delta", veh, "DLC_WMSIRENS_SOUNDSET", 0, 0)
 			
 			elseif newstate == 3 then
 				snd_airmanu[veh] = GetSoundId()

@@ -12,14 +12,14 @@ local syncInProgress = false
 
 TriggerEvent("chat:addTemplate", "firescript", '<div style="text-indent: 0 !important; padding: 0.5vw; margin: 0.05vw; color: rgba(255,255,255,0.9);background-color: rgba(250,26,56, 0.8); border-radius: 4px;"><b>{0}</b> {1} </div>')
 
-TriggerEvent('chat:addSuggestion', '/startfire', 'Creates a fire', {
+TriggerEvent('chat:addSuggestion', '/startfire', 'Opretter en brand', {
 	{
 		name = "spread",
-		help = "How many times can the fire spread?"
+		help = "Hvor mange gange kan ilden spredes?"
 	},
 	{
 		name = "chance",
-		help = "0 - 100; How quickly the fire spreads?"
+		help = "0 - 100; Hvor hurtigt branden spredes?"
 	},
 	{
 		name = "dispatch",
@@ -27,114 +27,114 @@ TriggerEvent('chat:addSuggestion', '/startfire', 'Creates a fire', {
 	}
 })
 
-TriggerEvent('chat:addSuggestion', '/stopfire', 'Stops the fire', {
+TriggerEvent('chat:addSuggestion', '/stopfire', 'Stopper ilden', {
 	{
 		name = "index",
-		help = "The fire's index"
+		help = "Ildens indeks"
 	}
 })
 
-TriggerEvent('chat:addSuggestion', '/stopallfires', 'Stops all fires')
+TriggerEvent('chat:addSuggestion', '/stopallfires', 'Stopper alle brande')
 
-TriggerEvent('chat:addSuggestion', '/registerfire', 'Registers a new fire configuration')
+TriggerEvent('chat:addSuggestion', '/registerfire', 'Registrerer en ny brandkonfiguration')
 
-TriggerEvent('chat:addSuggestion', '/addflame', 'Adds a flame to a registered fire', {
+TriggerEvent('chat:addSuggestion', '/addflame', 'Tilføjer en flamme til en registreret brand', {
 	{
 		name = "fireID",
-		help = "The registered fire"
+		help = "Den registrerede brand"
 	},
 	{
 		name = "spread",
-		help = "How many times can the flame spread?"
+		help = "Hvor mange gange kan flammen spredes?"
 	},
 	{
 		name = "chance",
-		help = "How many out of 100 chances should the fire spread? (0-100)"
+		help = "Hvor mange ud af 100 chancer skal ilden sprede sig? (0-100)"
 	}
 })
 
-TriggerEvent('chat:addSuggestion', '/removeflame', 'Removes a flame from a registered fire', {
+TriggerEvent('chat:addSuggestion', '/removeflame', 'Fjerner en flamme fra en registreret brand', {
 	{
 		name = "fireID",
-		help = "The fire ID"
+		help = "Brand-ID"
 	},
 	{
 		name = "flameID",
-		help = "The flame ID"
+		help = "Flamme-ID"
 	}
 })
 
-TriggerEvent('chat:addSuggestion', '/removefire', 'Removes a registered fire', {
+TriggerEvent('chat:addSuggestion', '/removefire', 'Fjerner en registreret brand', {
 	{
 		name = "fireID",
-		help = "The fire ID"
+		help = "Brand-ID"
 	}
 })
 
-TriggerEvent('chat:addSuggestion', '/startregisteredfire', 'Starts a registered fire', {
+TriggerEvent('chat:addSuggestion', '/startregisteredfire', 'Starter en registreret brand', {
 	{
 		name = "fireID",
-		help = "The fire ID"
+		help = "Brand-ID"
 	},
 	{
 		name = "triggerDispatch",
-		help = "true / false - should the script trigger dispatch after spawning the fire? (default false)"
+		help = "true / false - skal scriptudløseren sendes efter spawning af ​​ilden? (default false)"
 	}
 })
 
-TriggerEvent('chat:addSuggestion', '/stopregisteredfire', 'Stops a registered fire', {
+TriggerEvent('chat:addSuggestion', '/stopregisteredfire', 'Stopper en registreret brand', {
 	{
 		name = "fireID",
-		help = "The fire ID"
+		help = "Brand-ID"
 	}
 })
 
-TriggerEvent('chat:addSuggestion', '/firewl', 'Manages the fire script whitelist', {
+TriggerEvent('chat:addSuggestion', '/firewl', 'Administrerer brand scriptet whitelist', {
 	{
 		name = "action",
 		help = "add / remove"
 	},
 	{
 		name = "playerID",
-		help = "The player's server ID"
+		help = "Spillerens server-id"
 	}
 })
 
-TriggerEvent('chat:addSuggestion', '/firewlreload', 'Reloads the whitelist from the config')
+TriggerEvent('chat:addSuggestion', '/firewlreload', 'Genindlæser whitelist fra konfigurationen')
 
-TriggerEvent('chat:addSuggestion', '/firedispatch', 'Manages the fire script dispatch subscribers', {
+TriggerEvent('chat:addSuggestion', '/firedispatch', 'Administrerer afsendelsesabonnenter på brand script', {
 	{
 		name = "action",
 		help = "add / remove"
 	},
 	{
 		name = "playerID",
-		help = "The player's server ID"
+		help = "Spillerens server-id"
 	}
 })
 
-TriggerEvent('chat:addSuggestion', '/remindme', 'Sets the GPS waypoint to the specified dispatch call.', {
+TriggerEvent('chat:addSuggestion', '/remindme', 'Indstiller GPS-waypoint til det angivne forsendelsesopkald.', {
 	{
 		name = "dispatchID",
-		help = "The dispatch identifier (number)"
+		help = "Forsendelses- brand id (nummer)"
 	}
 })
 
-TriggerEvent('chat:addSuggestion', '/cleardispatch', 'Clears navigation to the last dispatch call.', {
+TriggerEvent('chat:addSuggestion', '/cleardispatch', 'Rydder navigationen til det sidste afsendelsesopkald.', {
 	{
 		name = "dispatchID",
-		help = "(optional) The dispatch identifier, if filled in, the call's blip will be removed."
+		help = "(valgfrit) Forsendelses-id'et, hvis det udfyldes, fjernes opkaldets blip."
 	}
 })
 
-TriggerEvent('chat:addSuggestion', '/randomfires', 'Manages the random fire spawner', {
+TriggerEvent('chat:addSuggestion', '/randomfires', 'Administrerer den tilfældige ild spawner', {
 	{
 		name = "action",
 		help = "add / remove / enable / disable"
 	},
 	{
 		name = "p2",
-		help = "(optional) For add / remove action, fill in the registered fire ID."
+		help = "(valgfrit) For at tilføje/fjerne handling skal du udfylde det registrerede brand-ID."
 	}
 })
 
@@ -171,14 +171,14 @@ RegisterCommand(
 	function(source, args, rawCommand)
 		local dispatchNumber = tonumber(args[1])
 		if not dispatchNumber then
-			sendMessage("Invalid argument.")
+			sendMessage("Ugyldigt argument.")
 			return
 		end
 
 		local success = Dispatch:remind(dispatchNumber)
 
 		if not success then
-			sendMessage("Couldn't find the specified dispatch.")
+			sendMessage("Kunne ikke finde den angivne forsendelse.")
 			return
 		end
 	end,
@@ -301,7 +301,7 @@ if Config.Dispatch.enabled == true then
 		function(coords)
 			local streetName, crossingRoad = GetStreetNameAtCoord(coords.x, coords.y, coords.z)
 			local streetName = GetStreetNameFromHashKey(streetName)
-			local text = ("A fire broke out at %s."):format((crossingRoad > 0) and streetName .. " / " .. GetStreetNameFromHashKey(crossingRoad) or streetName)
+			local text = ("En brand brød ud ved %s."):format((crossingRoad > 0) and streetName .. " / " .. GetStreetNameFromHashKey(crossingRoad) or streetName)
 			TriggerServerEvent('fireDispatch:create', text, coords)
 		end
 	)

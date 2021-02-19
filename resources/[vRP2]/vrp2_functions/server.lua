@@ -281,6 +281,12 @@ function Functions:__construct()
     vRP.Extension.__construct(self)
   
     menu_computer(self)
+	
+	--- toggle blips
+	local function m_delveh(menu)
+    local user = menu.user
+	self.remote._deleteVehicleInFrontOrInside(user.source, 5.0)
+	end
 
     -- spawn vehicle
     local function m_spawnveh(menu)
@@ -292,11 +298,18 @@ function Functions:__construct()
             vRP.EXT.Base.remote._notify(user.source,"Invalid")
         end
     end
+	
+	local function m_tp(menu)
+		local user = menu.user
+		self.remote._tpToWaypoint(user.source)
+	end
 
     vRP.EXT.GUI:registerMenuBuilder("admin", function(menu)
         local user = menu.user
         if user:hasPermission("admin.extras") then
-            menu:addOption("Spawn Vehicle", m_spawnveh)          
+			menu:addOption("TP to Waypoint", m_tp)
+            menu:addOption("Spawn Vehicle", m_spawnveh)
+			menu:addOption("Delete Vehicle", m_delveh)	
         end
     end)
 
@@ -306,7 +319,6 @@ function Functions:__construct()
         menu:addOption("Dynamic Fine", m_fine)
     end)
 end
-
 
 
 vRP:registerExtension(Functions)

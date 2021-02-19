@@ -218,9 +218,9 @@ local function menu_admin(self)
     if user:hasPermission("player.list") then
       menu:addOption(lang.admin.users.title(), m_users)
     end
-    if user:hasPermission("player.tpto") then
-      menu:addOption(lang.admin.tptomarker.title(), m_tptomarker)
-    end
+    --if user:hasPermission("player.tpto") then
+    --  menu:addOption(lang.admin.tptomarker.title(), m_tptomarker)
+    --end
     if user:hasPermission("player.tpto") then
       menu:addOption(lang.admin.tptocoords.title(), m_tptocoords)
     end

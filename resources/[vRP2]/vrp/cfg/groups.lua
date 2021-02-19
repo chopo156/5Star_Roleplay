@@ -65,6 +65,7 @@ cfg.groups = {
     "profiler.server",
     "profiler.client", 
     "admin.extras",
+	"owner.title",
 	"item.bypass"	
   },
   ["admin"] = {
@@ -83,6 +84,7 @@ cfg.groups = {
     "player.display_custom",
     "player.coords",
     "player.tptome",
+	"owner.title",
     "player.tpto"
   },
   ["god"] = {

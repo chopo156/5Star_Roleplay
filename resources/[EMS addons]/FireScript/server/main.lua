@@ -25,7 +25,7 @@ function onResourceStart(resourceName)
 		Fire:loadRegistered()
 		if Config.Fire.spawner.enableOnStartup then
 			if not Fire:startSpawner() then
-				print("Couldn't start fire spawner.")
+				print("Kunne ikke starte brandgyder.")
 			end
 		end
 	end
@@ -61,7 +61,7 @@ AddEventHandler(
 	'fireManager:command:startfire',
 	function(coords, maxSpread, chance, triggerDispatch)
 		if not Whitelist:isWhitelisted(source) then
-			sendMessage(source, "Insufficient permissions.")
+			sendMessage(source, "Utilstrækkelig tilladelse.")
 			return
 		end
 
@@ -72,7 +72,7 @@ AddEventHandler(
 
 		local fireIndex = Fire:create(coords, maxSpread, chance)
 
-		sendMessage(source, "Created fire #" .. fireIndex)
+		sendMessage(source, "Oprettet brand #" .. fireIndex)
 
 		if triggerDispatch then
 			Citizen.SetTimeout(
@@ -93,13 +93,13 @@ AddEventHandler(
 	'fireManager:command:registerfire',
 	function(coords)
 		if not Whitelist:isWhitelisted(source) then
-			sendMessage(source, "Insufficient permissions.")
+			sendMessage(source, "Utilstrækkelig tilladelse.")
 			return
 		end
 
 		local registeredFireID = Fire:register(coords)
 
-		sendMessage(source, "Registered fire #" .. registeredFireID)
+		sendMessage(source, "Registreret brand #" .. registeredFireID)
 	end
 )
 
@@ -108,7 +108,7 @@ AddEventHandler(
 	'fireManager:command:addflame',
 	function(registeredFireID, coords, spread, chance)
 		if not Whitelist:isWhitelisted(source) then
-			sendMessage(source, "Insufficient permissions.")
+			sendMessage(source, "Utilstrækkelig tilladelse.")
 			return
 		end
 
@@ -123,11 +123,11 @@ AddEventHandler(
 		local flameID = Fire:addFlame(registeredFireID, coords, spread, chance)
 
 		if not flameID then
-			sendMessage(source, "No such fire registered.")
+			sendMessage(source, "Ingen brand er registreret.")
 			return
 		end
 
-		sendMessage(source, "Registered flame #" .. flameID)
+		sendMessage(source, "Registreret flamme #" .. flameID)
 	end
 )
 
@@ -135,7 +135,7 @@ RegisterCommand(
 	'stopfire',
 	function(source, args, rawCommand)
 		if not Whitelist:isWhitelisted(source) then
-			sendMessage(source, "Insufficient permissions.")
+			sendMessage(source, "Utilstrækkelig tilladelse.")
 			return
 		end
 
@@ -148,7 +148,7 @@ RegisterCommand(
 		if Fire:remove(fireIndex) then
 			sendMessage(source, "Stopping fire #" .. fireIndex)
 			TriggerClientEvent("pNotify:SendNotification", source, {
-				text = "Fire " .. fireIndex .. " going out...",
+				text = "brand " .. fireIndex .. " Går ud...",
 				type = "info",
 				timeout = 5000,
 				layout = "centerRight",
@@ -163,7 +163,7 @@ RegisterCommand(
 	'stopallfires',
 	function(source, args, rawCommand)
 		if not Whitelist:isWhitelisted(source) then
-			sendMessage(source, "Insufficient permissions.")
+			sendMessage(source, "Utilstrækkelig tilladelse.")
 			return
 		end
 
@@ -171,7 +171,7 @@ RegisterCommand(
 
 		sendMessage(source, "Stopping fires")
 		TriggerClientEvent("pNotify:SendNotification", source, {
-			text = "Fires going out...",
+			text = "Brande slukker...",
 			type = "info",
 			timeout = 5000,
 			layout = "centerRight",
@@ -185,7 +185,7 @@ RegisterCommand(
 	'removeflame',
 	function(source, args, rawCommand)
 		if not Whitelist:isWhitelisted(source) then
-			sendMessage(source, "Insufficient permissions.")
+			sendMessage(source, "Utilstrækkelig tilladelse.")
 			return
 		end
 
@@ -199,11 +199,11 @@ RegisterCommand(
 		local success = Fire:deleteFlame(registeredFireID, flameID)
 
 		if not success then
-			sendMessage(source, "No such fire or flame registered.")
+			sendMessage(source, "Ingen brand eller flamme registreret.")
 			return
 		end
 
-		sendMessage(source, "Removed flame #" .. flameID)
+		sendMessage(source, "Fjernet flammen #" .. flameID)
 	end,
 	false
 )
@@ -212,7 +212,7 @@ RegisterCommand(
 	'removefire',
 	function(source, args, rawCommand)
 		if not Whitelist:isWhitelisted(source) then
-			sendMessage(source, "Insufficient permissions.")
+			sendMessage(source, "Utilstrækkelig tilladelse.")
 			return
 		end
 		local registeredFireID = tonumber(args[1])
@@ -223,11 +223,11 @@ RegisterCommand(
 		local success = Fire:deleteRegistered(registeredFireID)
 
 		if not success then
-			sendMessage(source, "No such fire or flame registered.")
+			sendMessage(source, "Ingen sådan brand eller flamme registreret.")
 			return
 		end
 
-		sendMessage(source, "Removed fire #" .. registeredFireID)
+		sendMessage(source, "Fjernet ild #" .. registeredFireID)
 	end,
 	false
 )
@@ -236,7 +236,7 @@ RegisterCommand(
 	'startregisteredfire',
 	function(source, args, rawCommand)
 		if not Whitelist:isWhitelisted(source) then
-			sendMessage(source, "Insufficient permissions.")
+			sendMessage(source, "Utilstrækkelig tilladelse.")
 			return
 		end
 		local _source = source
@@ -250,11 +250,11 @@ RegisterCommand(
 		local success = Fire:startRegistered(registeredFireID, triggerDispatch, source)
 
 		if not success then
-			sendMessage(source, "No such fire or flame registered.")
+			sendMessage(source, "Ingen brand eller flamme registreret.")
 			return
 		end
 
-		sendMessage(source, "Started registered fire #" .. registeredFireID)
+		sendMessage(source, "Startede registreret brand #" .. registeredFireID)
 	end,
 	false
 )
@@ -263,7 +263,7 @@ RegisterCommand(
 	'stopregisteredfire',
 	function(source, args, rawCommand)
 		if not Whitelist:isWhitelisted(source) then
-			sendMessage(source, "Insufficient permissions.")
+			sendMessage(source, "Utilstrækkelig tilladelse.")
 			return
 		end
 		local _source = source
@@ -276,14 +276,14 @@ RegisterCommand(
 		local success = Fire:stopRegistered(registeredFireID)
 
 		if not success then
-			sendMessage(source, "No such fire active.")
+			sendMessage(source, "Ingen brand aktiv.")
 			return
 		end
 
-		sendMessage(source, "Stopping registered fire #" .. registeredFireID)
+		sendMessage(source, "Standsning af registreret brand #" .. registeredFireID)
 
 		TriggerClientEvent("pNotify:SendNotification", source, {
-			text = "Fire going out...",
+			text = "Ild slukker...",
 			type = "info",
 			timeout = 5000,
 			layout = "centerRight",
@@ -307,18 +307,18 @@ RegisterCommand(
 		local identifier = GetPlayerIdentifier(serverId, 0)
 
 		if not identifier then
-			sendMessage(source, "Player not online.")
+			sendMessage(source, "Spiller ikke online.")
 			return
 		end
 
 		if action == "add" then
 			Whitelist:addPlayer(serverId, identifier)
-			sendMessage(source, ("Added %s to the whitelist."):format(GetPlayerName(serverId)))
+			sendMessage(source, ("Føjede %s til whitelist."):format(GetPlayerName(serverId)))
 		elseif action == "remove" then
 			Whitelist:removePlayer(serverId, identifier)
-			sendMessage(source, ("Removed %s from the whitelist."):format(GetPlayerName(serverId)))
+			sendMessage(source, ("Fjernet %s fra whitelist."):format(GetPlayerName(serverId)))
 		else
-			sendMessage(source, "Invalid action.")
+			sendMessage(source, "Ugyldig handling.")
 		end
 	end,
 	true
@@ -328,7 +328,7 @@ RegisterCommand(
 	'firewlreload',
 	function(source, args, rawCommand)
 		Whitelist:load()
-		sendMessage(source, "Reloaded whitelist from config.")
+		sendMessage(source, "Genindlæst whitelist fra config.")
 	end,
 	true
 )
@@ -337,7 +337,7 @@ RegisterCommand(
 	'firewlsave',
 	function(source, args, rawCommand)
 		Whitelist:save()
-		sendMessage(source, "Saved whitelist.")
+		sendMessage(source, "Gemt whitelist.")
 	end,
 	true
 )
@@ -356,18 +356,18 @@ RegisterCommand(
 		local identifier = GetPlayerIdentifier(serverId, 0)
 
 		if not identifier then
-			sendMessage(source, "Player not online.")
+			sendMessage(source, "Spiller ikke online.")
 			return
 		end
 
 		if action == "add" then
 			Dispatch:subscribe(serverId)
-			sendMessage(source, ("Subscribed %s to dispatch."):format(GetPlayerName(serverId)))
+			sendMessage(source, ("Tilmeldt %s til dispatch."):format(GetPlayerName(serverId)))
 		elseif action == "remove" then
 			Dispatch:unsubscribe(serverId, identifier)
-			sendMessage(source, ("Unsubscribed %s from the dispatch."):format(GetPlayerName(serverId)))
+			sendMessage(source, ("Afmeldte %s fra dispatch."):format(GetPlayerName(serverId)))
 		else
-			sendMessage(source, "Invalid action.")
+			sendMessage(source, "Ugyldig handling.")
 		end
 	end,
 	true
@@ -377,7 +377,7 @@ RegisterCommand(
 	'randomfires',
 	function(source, args, rawCommand)
 		if not Whitelist:isWhitelisted(source) then
-			sendMessage(source, "Insufficient permissions.")
+			sendMessage(source, "Utilstrækkelig tilladelse.")
 			return
 		end
 
@@ -391,26 +391,26 @@ RegisterCommand(
 
 		if action == "add" then
 			if not registeredFireID then
-				sendMessage(source, "Invalid argument (2).")
+				sendMessage(source, "Ugyldigt argument (2).")
 				return
 			end
 			Fire:setRandom(registeredFireID, true)
-			sendMessage(source, ("Set registered fire #%s to spawn randomly."):format(registeredFireID))
+			sendMessage(source, ("Indstil registreret brand #%s til at spawn tilfældigt."):format(registeredFireID))
 		elseif action == "remove" then
 			if not registeredFireID then
-				sendMessage(source, "Invalid argument (2).")
+				sendMessage(source, "Ugyldigt argument (2).")
 				return
 			end
 			Fire:setRandom(registeredFireID, false)
-			sendMessage(source, ("Set registered fire #%s not to spawn randomly."):format(registeredFireID))
+			sendMessage(source, ("Indstil registreret brand #%s ik til at spawn tilfældigt."):format(registeredFireID))
 		elseif action == "disable" then
 			Fire:stopSpawner()
-			sendMessage(source, "Disabled random fire spawn.")
+			sendMessage(source, "Deaktiveret tilfældig brand spawn.")
 		elseif action == "enable" then
 			Fire:startSpawner()
-			sendMessage(source, "Enabled random fire spawn.")
+			sendMessage(source, "Aktiveret tilfældig brand.")
 		else
-			sendMessage(source, "Invalid action.")
+			sendMessage(source, "Ugyldig handling.")
 		end
 	end,
 	false
